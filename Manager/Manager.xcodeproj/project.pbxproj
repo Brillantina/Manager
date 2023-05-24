@@ -16,6 +16,11 @@
 		C9F7B3702A1E01ED00D004ED /* ManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7B36F2A1E01ED00D004ED /* ManagerTests.swift */; };
 		C9F7B37A2A1E01ED00D004ED /* ManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7B3792A1E01ED00D004ED /* ManagerUITests.swift */; };
 		C9F7B37C2A1E01ED00D004ED /* ManagerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7B37B2A1E01ED00D004ED /* ManagerUITestsLaunchTests.swift */; };
+		C9F7B3892A1E093700D004ED /* PatientDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7B3882A1E093700D004ED /* PatientDetailView.swift */; };
+		C9F7B38B2A1E095100D004ED /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7B38A2A1E095100D004ED /* Patient.swift */; };
+		C9F7B38D2A1E097000D004ED /* AddPatientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7B38C2A1E097000D004ED /* AddPatientView.swift */; };
+		C9F7B38F2A1E098B00D004ED /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7B38E2A1E098B00D004ED /* LoginView.swift */; };
+		C9F7B3912A1E099E00D004ED /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7B3902A1E099E00D004ED /* SearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		C9F7B3752A1E01ED00D004ED /* ManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9F7B3792A1E01ED00D004ED /* ManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerUITests.swift; sourceTree = "<group>"; };
 		C9F7B37B2A1E01ED00D004ED /* ManagerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C9F7B3882A1E093700D004ED /* PatientDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientDetailView.swift; sourceTree = "<group>"; };
+		C9F7B38A2A1E095100D004ED /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
+		C9F7B38C2A1E097000D004ED /* AddPatientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPatientView.swift; sourceTree = "<group>"; };
+		C9F7B38E2A1E098B00D004ED /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		C9F7B3902A1E099E00D004ED /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +111,11 @@
 			children = (
 				C9F7B3582A1E01EC00D004ED /* ManagerApp.swift */,
 				C9F7B35A2A1E01EC00D004ED /* ContentView.swift */,
+				C9F7B3882A1E093700D004ED /* PatientDetailView.swift */,
+				C9F7B38A2A1E095100D004ED /* Patient.swift */,
+				C9F7B38C2A1E097000D004ED /* AddPatientView.swift */,
+				C9F7B38E2A1E098B00D004ED /* LoginView.swift */,
+				C9F7B3902A1E099E00D004ED /* SearchBar.swift */,
 				C9F7B35C2A1E01ED00D004ED /* Assets.xcassets */,
 				C9F7B3612A1E01ED00D004ED /* Persistence.swift */,
 				C9F7B3662A1E01ED00D004ED /* Info.plist */,
@@ -267,8 +282,13 @@
 			files = (
 				C9F7B3622A1E01ED00D004ED /* Persistence.swift in Sources */,
 				C9F7B35B2A1E01EC00D004ED /* ContentView.swift in Sources */,
+				C9F7B38D2A1E097000D004ED /* AddPatientView.swift in Sources */,
 				C9F7B3592A1E01EC00D004ED /* ManagerApp.swift in Sources */,
 				C9F7B3652A1E01ED00D004ED /* Manager.xcdatamodeld in Sources */,
+				C9F7B3912A1E099E00D004ED /* SearchBar.swift in Sources */,
+				C9F7B3892A1E093700D004ED /* PatientDetailView.swift in Sources */,
+				C9F7B38F2A1E098B00D004ED /* LoginView.swift in Sources */,
+				C9F7B38B2A1E095100D004ED /* Patient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,8 +453,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeRight;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -462,8 +482,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeRight;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
