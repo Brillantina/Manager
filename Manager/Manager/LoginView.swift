@@ -12,51 +12,73 @@ struct LoginView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var isLoginSuccessful = false
+    
+    
+    //    @Binding var isUserCurrentlyLoggedOut : Bool
+    
     var body: some View {
-        VStack(alignment: .center) {
-
-            
-            TextField("Email", text: $email)
-                .frame(width: 500, height: 50)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
+        
+        
+        
+        
+        
+        if isLoginSuccessful{
+            ContentView()
+        }
+        else{
+            VStack(alignment: .center) {
                 
-            
-            SecureField("Password", text: $password)
-                .frame(width: 500, height: 50)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-            
-            Button(action: {
-                            // Perform login action here
-                            if email.isEmpty && password.isEmpty {
-                                isLoginSuccessful = true
-                            } else {
-                                // Perform other login validations here
-                            }
-                        })  {
-                Text("Login")
-                    .foregroundColor(.gray)
-                    .frame(width: 100, height: 20)
+                
+                TextField("Email", text: $email)
+                    .frame(width: 500, height: 50)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
-                    .cornerRadius(10)
+                
+                
+                SecureField("Password", text: $password)
+                    .frame(width: 500, height: 50)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                
+                Button(action: {
+                    // Perform login action here
+                    if email.isEmpty && password.isEmpty {
+                        
+                        isLoginSuccessful = true
+                        
+                        
+                        
+                        
+                    } else {
+                        // Perform other login validations here
+                    }
+                })  {
+                    Text("Login")
+                        .foregroundColor(.gray)
+                        .frame(width: 100, height: 20)
+                        .padding()
+                        .cornerRadius(10)
+                }
+                .padding()
+                //            .fullScreenCover(isPresented: $isLoginSuccessful, content: {
+                //                ContentView()
+                //            })
             }
             .padding()
-            .fullScreenCover(isPresented: $isLoginSuccessful, content: {
-                ContentView()
-            })
         }
-        .padding()
+        
     }
-    
-    private func login() {
-        // Perform login logic here
-        // You can access the entered email and password using the `email` and `password` variables
-        // Validate credentials, make API calls, etc.
+        private func login() {
+            // Perform login logic here
+            // You can access the entered email and password using the `email` and `password` variables
+            // Validate credentials, make API calls, etc.
+        }
     }
-}
+
+
 
 struct LoginView_Previews: PreviewProvider {
+
     static var previews: some View {
         LoginView()
     }
