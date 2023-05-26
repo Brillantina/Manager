@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+import SwiftUI
+
 struct PatientDetailView: View {
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.managedObjectContext) private var viewContext
@@ -15,8 +17,11 @@ struct PatientDetailView: View {
     @State private var dateOfBirth = Date()
     
     var patientEntity: PatientEntity?
+    let numberOfGames = 4
+    var numberOfLevels = 3
     
     @ObservedObject private var editedPatient: Patient
+    @State private var selectedLevels: [[Bool]] = []
     
     init(patientEntity: PatientEntity?) {
         self.patientEntity = patientEntity
@@ -40,11 +45,14 @@ struct PatientDetailView: View {
                 gameStatus: Binding.constant("")
             ))
         }
+        
+
+        
     }
     
     var body: some View {
         VStack {
-            HStack(spacing: 250) {
+            HStack(spacing: 50) {
                 Button(action: {
                     // Delete patient action
                     return
@@ -52,7 +60,7 @@ struct PatientDetailView: View {
                     Text("Delete")
                         .foregroundColor(.gray)
                 }
-
+                
                 Text("New patient")
                 
                 Button(action: {
@@ -78,51 +86,34 @@ struct PatientDetailView: View {
                     .cornerRadius(8)
                     .padding(.horizontal)
                 
-                DatePicker("Date of Birth", selection: $dateOfBirth, displayedComponents: .date)
+                TextField("", text: $editedPatient.id)
                     .padding()
                     .background(Color(.systemGray6))
                     .cornerRadius(8)
                     .padding(.horizontal)
+                
+                
+                
             }
             
-            ScrollView {
-                VStack {
-                    ForEach(0..<editedPatient.gameStatus.wrappedValue.count, id: \.self) { gameIndex in
-                        Toggle(isOn: Binding(
-                            get: {
-                                guard editedPatient.gameStatus.wrappedValue.count > gameIndex else {
-                                    return false
-                                }
-                                let index = editedPatient.gameStatus.wrappedValue.index(
-                                    editedPatient.gameStatus.wrappedValue.startIndex,
-                                    offsetBy: gameIndex
-                                )
-                                return editedPatient.gameStatus.wrappedValue[index] == "1"
-                            },
-                            set: { newValue in
-                                guard editedPatient.gameStatus.wrappedValue.count > gameIndex else {
-                                    return
-                                }
-                                var updatedGameStatus = editedPatient.gameStatus.wrappedValue
-                                let index = updatedGameStatus.index(
-                                    updatedGameStatus.startIndex,
-                                    offsetBy: gameIndex
-                                )
-                                updatedGameStatus.replaceSubrange(index...index, with: newValue ? "1" : "0")
-                                editedPatient.gameStatus.wrappedValue = updatedGameStatus
-                                print(editedPatient.gameStatus.wrappedValue)
-                            }
-                        )) {
-                            Text("Game \(gameIndex + 1)")
-                        }
-                        .padding()
-                        .foregroundColor(.primary)
-                        .toggleStyle(SwitchToggleStyle(tint: .green))
-                    }
-                }
+            GameLevelsView(inputString: editedPatient.gameStatus)
+            
+            Spacer()
+            
+            
+            
+            
+            
+            
+            
             }
-        }
+        
     }
+        
+    
+    
+    
+
     
     func reSavePatient() {
         guard let patientEntity = patientEntity else {
@@ -142,20 +133,39 @@ struct PatientDetailView: View {
         entity.patientSurname = editedPatient.patientSurname
         entity.gameStatus = editedPatient.gameStatus.wrappedValue
         
-        
         do {
             try viewContext.save()
+            print("GAMESTATUS: \(entity.gameStatus)")
             print("Paziente salvato con successo")
             presentationMode.wrappedValue.dismiss()
         } catch let error as NSError {
             print("Errore durante il salvataggio del paziente: \(error)")
         }
     }
+    
+    
 }
 
 
-//struct PatientDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PatientDetailView(patient: Patient(id: "1", patientName: "Giuseppe", patientSurname: "Iodice", gameStatus: Binding.constant("0101")))
-//    }
-//}
+
+
+
+
+
+
+
+
+
+struct PatientDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        // Create a constant instance of PatientEntity
+        let patientEntity = PatientEntity(context: PersistenceController.preview.container.viewContext)
+        patientEntity.id = "123"
+        patientEntity.patientName = "Rita"
+        patientEntity.patientSurname = "Marrano"
+        patientEntity.gameStatus = "1010010110110000"
+        
+        return PatientDetailView(patientEntity: patientEntity)
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+    }
+}

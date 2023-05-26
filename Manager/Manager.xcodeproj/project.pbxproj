@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C93F08C92A21011B00A576A1 /* GameLevelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93F08C82A21011B00A576A1 /* GameLevelsView.swift */; };
 		C9F7B3592A1E01EC00D004ED /* ManagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7B3582A1E01EC00D004ED /* ManagerApp.swift */; };
 		C9F7B35B2A1E01EC00D004ED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7B35A2A1E01EC00D004ED /* ContentView.swift */; };
 		C9F7B35D2A1E01ED00D004ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9F7B35C2A1E01ED00D004ED /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C93F08C82A21011B00A576A1 /* GameLevelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLevelsView.swift; sourceTree = "<group>"; };
 		C9F7B3552A1E01EC00D004ED /* Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Manager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9F7B3582A1E01EC00D004ED /* ManagerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerApp.swift; sourceTree = "<group>"; };
 		C9F7B35A2A1E01EC00D004ED /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				C9F7B3582A1E01EC00D004ED /* ManagerApp.swift */,
 				C9F7B35A2A1E01EC00D004ED /* ContentView.swift */,
 				C9F7B3882A1E093700D004ED /* PatientDetailView.swift */,
+				C93F08C82A21011B00A576A1 /* GameLevelsView.swift */,
 				C9F7B38A2A1E095100D004ED /* Patient.swift */,
 				C9F7B38C2A1E097000D004ED /* AddPatientView.swift */,
 				C9F7B38E2A1E098B00D004ED /* LoginView.swift */,
@@ -281,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9F7B3622A1E01ED00D004ED /* Persistence.swift in Sources */,
+				C93F08C92A21011B00A576A1 /* GameLevelsView.swift in Sources */,
 				C9F7B35B2A1E01EC00D004ED /* ContentView.swift in Sources */,
 				C9F7B38D2A1E097000D004ED /* AddPatientView.swift in Sources */,
 				C9F7B3592A1E01EC00D004ED /* ManagerApp.swift in Sources */,
